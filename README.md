@@ -21,6 +21,7 @@ Real-time analytics
 
 
 🛠️ Tech Stack
+
 Next.js – Full-stack React framework
 Supabase – PostgreSQL database backend
 Prisma – Modern ORM for database management
