@@ -6,7 +6,8 @@ import { notFound } from "next/navigation";
 import { AccountChart } from "../_components/account-chart";
 
 export default async function AccountPage({ params }) {
-  const { id } = params;
+  const resolvedParams = await params;
+  const id = resolvedParams?.id;
 
   if (!id) {
     notFound();
@@ -27,8 +28,10 @@ export default async function AccountPage({ params }) {
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight gradient-title capitalize">
             {account.name}
           </h1>
+
           <p className="text-muted-foreground">
-            {account.type.charAt(0) + account.type.slice(1).toLowerCase()}{" "}
+            {account.type.charAt(0) +
+              account.type.slice(1).toLowerCase()}{" "}
             Account
           </p>
         </div>
@@ -37,13 +40,13 @@ export default async function AccountPage({ params }) {
           <div className="text-xl sm:text-2xl font-bold">
             ${parseFloat(account.balance).toFixed(2)}
           </div>
+
           <p className="text-sm text-muted-foreground">
             {account._count.transactions} Transactions
           </p>
         </div>
       </div>
 
-      {/* Chart Section */}
       <Suspense
         fallback={
           <BarLoader
@@ -56,7 +59,6 @@ export default async function AccountPage({ params }) {
         <AccountChart transactions={transactions} />
       </Suspense>
 
-      {/* Transactions Table */}
       <Suspense
         fallback={
           <BarLoader
