@@ -21,6 +21,7 @@ Real-time analytics
 
 
 🛠️ Tech Stack
+
 Next.js – Full-stack React framework
 Supabase – PostgreSQL database backend
 Prisma – Modern ORM for database management
@@ -33,6 +34,7 @@ Gemini AI / OpenAI – AI-powered finance intelligence
 
 
 ✨ Key Features
+
 🔐 Secure User Authentication
 💳 Expense & Income Tracking
 📊 Interactive Dashboard Analytics
@@ -44,6 +46,7 @@ Gemini AI / OpenAI – AI-powered finance intelligence
 
 
 🎯 Highlights
+
 Professional full-stack architecture
 Real-world SaaS project structure
 AI integration for smarter finance decisions
@@ -53,6 +56,7 @@ Production-level security
 
 
 📈 Use Cases
+
 Personal finance management
 Expense categorization
 Budget optimization
@@ -60,6 +64,7 @@ Financial forecasting
 Spending behavior analysis
 
 🌟 Why This Project Stands Out
+
 Full-stack development expertise
 Modern SaaS application building
 Secure system design
