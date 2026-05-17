@@ -6,7 +6,13 @@ import { notFound } from "next/navigation";
 import { AccountChart } from "../_components/account-chart";
 
 export default async function AccountPage({ params }) {
-  const accountData = await getAccountWithTransactions(params.id);
+  const { id } = params;
+
+  if (!id) {
+    notFound();
+  }
+
+  const accountData = await getAccountWithTransactions(id);
 
   if (!accountData) {
     notFound();
@@ -39,14 +45,26 @@ export default async function AccountPage({ params }) {
 
       {/* Chart Section */}
       <Suspense
-        fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
+        fallback={
+          <BarLoader
+            className="mt-4"
+            width={"100%"}
+            color="#9333ea"
+          />
+        }
       >
         <AccountChart transactions={transactions} />
       </Suspense>
 
       {/* Transactions Table */}
       <Suspense
-        fallback={<BarLoader className="mt-4" width={"100%"} color="#9333ea" />}
+        fallback={
+          <BarLoader
+            className="mt-4"
+            width={"100%"}
+            color="#9333ea"
+          />
+        }
       >
         <TransactionTable transactions={transactions} />
       </Suspense>
