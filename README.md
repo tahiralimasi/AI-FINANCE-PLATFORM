@@ -1,4 +1,4 @@
-# 🔥 Full Stack AI Finance Platform
+# 💰 AI Finance Platform
 
 A modern AI-powered finance management platform designed to help users track expenses, monitor budgets, and gain intelligent financial insights through automation and AI.
 
@@ -6,11 +6,12 @@ A modern AI-powered finance management platform designed to help users track exp
 
 ---
 
-## 🚀 Project Overview
+# 🚀 Project Overview
 
 This project combines powerful full-stack technologies to deliver a secure, scalable, and visually appealing personal finance solution.
 
-### Core Purpose
+## 🎯 Core Purpose
+
 - Smart expense tracking
 - Budget management
 - AI-generated financial insights
@@ -20,21 +21,7 @@ This project combines powerful full-stack technologies to deliver a secure, scal
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Next.js** – Full-stack React framework
-- **Supabase** – PostgreSQL database backend
-- **Prisma** – Modern ORM for database management
-- **Tailwind CSS** – Responsive UI styling
-- **Shadcn UI** – Clean component system
-- **Clerk** – User authentication
-- **Inngest** – Background job automation
-- **ArcJet** – Security & rate limiting
-- **Gemini AI / OpenAI** – AI-powered finance intelligence
-
----
-
-## ✨ Key Features
+# ✨ Key Features
 
 - 🔐 Secure User Authentication
 - 💳 Expense & Income Tracking
@@ -42,12 +29,47 @@ This project combines powerful full-stack technologies to deliver a secure, scal
 - 🤖 AI Financial Recommendations
 - 📅 Budget Planning Tools
 - 📩 Notifications & Alerts
+- 🔄 Recurring Transaction Management
 - 🛡️ Advanced Security Protection
 - ⚙️ Automated Financial Workflows
 
 ---
 
-## 🎯 Highlights
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| **Next.js** | Full-stack React framework |
+| **Supabase** | PostgreSQL database backend |
+| **Prisma** | Modern ORM for database management |
+| **Tailwind CSS** | Responsive UI styling |
+| **Shadcn UI** | Clean component system |
+| **Clerk** | User authentication |
+| **Inngest** | Background job automation |
+| **ArcJet** | Security & rate limiting |
+| **Gemini AI / OpenAI** | AI-powered finance intelligence |
+
+---
+
+# 📂 Folder Structure
+
+```bash
+AI-FINANCE-PLATFORM/
+│
+├── app/                # Application routes & pages
+├── components/         # Reusable UI components
+├── lib/                # Utility functions & configurations
+├── prisma/             # Database schema & Prisma setup
+├── public/             # Static assets
+├── hooks/              # Custom React hooks
+├── emails/             # Email templates
+├── data/               # Static and mock data
+└── middleware.js       # Middleware configuration
+```
+
+---
+
+# 🎯 Highlights
 
 - Professional full-stack architecture
 - Real-world SaaS project structure
@@ -58,7 +80,7 @@ This project combines powerful full-stack technologies to deliver a secure, scal
 
 ---
 
-## 📈 Use Cases
+# 📈 Use Cases
 
 - Personal finance management
 - Expense categorization
@@ -68,27 +90,80 @@ This project combines powerful full-stack technologies to deliver a secure, scal
 
 ---
 
-## 🌟 Why This Project Stands Out
+# ⚙️ Installation & Setup
 
-- Full-stack development expertise
-- Modern SaaS application building
-- Secure system design
-- AI integration skills
-- Database architecture knowledge
-- Professional UI/UX implementation
+## 1️⃣ Clone the Repository
 
----
+```bash
+git clone https://github.com/tahiralimasi/AI-FINANCE-PLATFORM.git
 
-## ⭐ Project Goal
-
-To build an intelligent financial ecosystem where users can:
-
-### Track  
-### Analyze  
-### Optimize  
-### Grow  
-
-their financial life with AI.
+cd AI-FINANCE-PLATFORM
+```
 
 ---
 
+## 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 3️⃣ Setup Environment Variables
+
+Create a `.env.local` file in the root directory and add:
+
+```env
+DATABASE_URL=
+
+DIRECT_URL=
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/dashboard
+
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/dashboard
+
+GEMINI_API_KEY=
+
+RESEND_API_KEY=
+
+ARCJET_KEY=
+```
+
+---
+
+## 4️⃣ Run Database Migration
+
+```bash
+npx prisma generate
+
+npx prisma db push
+```
+
+---
+
+## 5️⃣ Start Development Server
+
+```bash
+npm run dev
+```
+
+Application will run on:
+
+```bash
+http://localhost:3000
+```
+
+# 👨‍💻 Developer
+
+**Tahir Ali Masi**
+
+- Repository link: https://github.com/tahiralimasi/AI-FINANCE-PLATFORM
