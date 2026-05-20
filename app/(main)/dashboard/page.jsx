@@ -2,6 +2,9 @@ import { Suspense } from "react";
 import { getUserAccounts } from "@/actions/dashboard";
 import { getDashboardData } from "@/actions/dashboard";
 import { getCurrentBudget } from "@/actions/budget";
+import { generateAIInsights } from "@/actions/ai-insights";
+import { auth } from "@clerk/nextjs/server";
+
 import { AccountCard } from "./_components/account-card";
 import { CreateAccountDrawer } from "@/components/create-account-drawer";
 import { BudgetProgress } from "./_components/budget-progress";
@@ -10,9 +13,12 @@ import { Plus } from "lucide-react";
 import { DashboardOverview } from "./_components/transaction-overview";
 
 export default async function DashboardPage() {
-  const [accounts, transactions] = await Promise.all([
+  const { userId } = await auth();
+
+  const [accounts, transactions, aiInsights] = await Promise.all([
     getUserAccounts(),
     getDashboardData(),
+    generateAIInsights(userId),
   ]);
 
   const defaultAccount = accounts?.find((account) => account.isDefault);
@@ -37,6 +43,19 @@ export default async function DashboardPage() {
         transactions={transactions || []}
       />
 
+      {/* AI Financial Insights */}
+      <Card>
+        <CardContent className="p-5">
+          <h2 className="text-xl font-bold mb-4">
+            AI Budget Recommender
+          </h2>
+
+          <div className="whitespace-pre-line text-sm space-y-2">
+            {aiInsights}
+          </div>
+        </CardContent>
+      </Card>
+
       {/* Accounts Grid */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <CreateAccountDrawer>
@@ -47,6 +66,7 @@ export default async function DashboardPage() {
             </CardContent>
           </Card>
         </CreateAccountDrawer>
+
         {accounts.length > 0 &&
           accounts?.map((account) => (
             <AccountCard key={account.id} account={account} />
